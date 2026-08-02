@@ -1,0 +1,149 @@
+{
+  "disclaimer": "These are general, nonclinical planning notes written for PawPal+. They are illustrative defaults for scheduling purposes only and are not veterinary advice; always defer to a licensed veterinarian for an individual animal's needs.",
+  "snippets": [
+    {
+      "id": "dog-walk-1",
+      "species": "dog",
+      "category": "walk",
+      "text": "Adult dogs generally do well with at least 30 minutes of walking activity a day, often split across one or two walks depending on breed energy level and age.",
+      "suggested_duration_minutes": 30,
+      "suggested_priority": "high",
+      "source": "PawPal+ Care Guide: Canine Exercise Basics"
+    },
+    {
+      "id": "dog-feeding-1",
+      "species": "dog",
+      "category": "feeding",
+      "text": "Adult dogs are commonly fed once or twice daily; the feeding session itself (serving, supervising, cleanup) typically takes about 10 minutes.",
+      "suggested_duration_minutes": 10,
+      "suggested_priority": "high",
+      "source": "PawPal+ Care Guide: Canine Feeding Basics"
+    },
+    {
+      "id": "dog-meds-1",
+      "species": "dog",
+      "category": "meds",
+      "text": "Administering routine medication to a dog is usually brief, around 5 minutes, but consistency of timing matters more than the exact duration.",
+      "suggested_duration_minutes": 5,
+      "suggested_priority": "high",
+      "source": "PawPal+ Care Guide: Medication Routines"
+    },
+    {
+      "id": "dog-grooming-1",
+      "species": "dog",
+      "category": "grooming",
+      "text": "Short haired dogs typically need brushing sessions of 10 to 15 minutes a few times a week; long haired breeds often need 20 to 30 minutes to prevent matting.",
+      "suggested_duration_minutes": 20,
+      "suggested_priority": "medium",
+      "source": "PawPal+ Care Guide: Grooming Basics"
+    },
+    {
+      "id": "dog-enrichment-1",
+      "species": "dog",
+      "category": "enrichment",
+      "text": "Puzzle toys, short training games, or play sessions of about 15 to 20 minutes help prevent boredom related behavior issues in dogs.",
+      "suggested_duration_minutes": 20,
+      "suggested_priority": "low",
+      "source": "PawPal+ Care Guide: Enrichment Basics"
+    },
+    {
+      "id": "cat-walk-1",
+      "species": "cat",
+      "category": "walk",
+      "text": "Cats rarely need a formal walk; instead, 10 to 15 minutes of structured interactive play (wand toys, chasing) is commonly used to meet activity needs.",
+      "suggested_duration_minutes": 15,
+      "suggested_priority": "medium",
+      "source": "PawPal+ Care Guide: Feline Activity Basics"
+    },
+    {
+      "id": "cat-feeding-1",
+      "species": "cat",
+      "category": "feeding",
+      "text": "Cats are often fed in smaller, more frequent meals; each individual feeding session typically takes about 5 to 10 minutes.",
+      "suggested_duration_minutes": 10,
+      "suggested_priority": "high",
+      "source": "PawPal+ Care Guide: Feline Feeding Basics"
+    },
+    {
+      "id": "cat-meds-1",
+      "species": "cat",
+      "category": "meds",
+      "text": "Giving medication to a cat (including pilling) can take 5 to 10 minutes once time to calm the animal is included.",
+      "suggested_duration_minutes": 10,
+      "suggested_priority": "high",
+      "source": "PawPal+ Care Guide: Medication Routines"
+    },
+    {
+      "id": "cat-grooming-1",
+      "species": "cat",
+      "category": "grooming",
+      "text": "Short haired cats mostly self groom but benefit from 5 to 10 minutes of brushing weekly; long haired cats often need 15 to 20 minutes several times a week.",
+      "suggested_duration_minutes": 15,
+      "suggested_priority": "medium",
+      "source": "PawPal+ Care Guide: Grooming Basics"
+    },
+    {
+      "id": "cat-enrichment-1",
+      "species": "cat",
+      "category": "enrichment",
+      "text": "Interactive toys or short clicker training sessions of 10 to 15 minutes help satisfy a cat's natural hunting instincts and reduce boredom.",
+      "suggested_duration_minutes": 15,
+      "suggested_priority": "low",
+      "source": "PawPal+ Care Guide: Enrichment Basics"
+    },
+    {
+      "id": "other-walk-1",
+      "species": "other",
+      "category": "walk",
+      "text": "Small mammals and other pets that are not dogs or cats often benefit from short, supervised time outside their enclosure (about 15 minutes) rather than a formal walk.",
+      "suggested_duration_minutes": 15,
+      "suggested_priority": "medium",
+      "source": "PawPal+ Care Guide: General Activity Basics"
+    },
+    {
+      "id": "other-feeding-1",
+      "species": "other",
+      "category": "feeding",
+      "text": "Feeding routines for small or exotic pets are usually quick, typically around 5 to 10 minutes depending on species.",
+      "suggested_duration_minutes": 10,
+      "suggested_priority": "high",
+      "source": "PawPal+ Care Guide: General Feeding Basics"
+    },
+    {
+      "id": "other-meds-1",
+      "species": "other",
+      "category": "meds",
+      "text": "Medication for small or exotic pets should be given at a consistent time each day; the session itself is typically brief, around 5 minutes.",
+      "suggested_duration_minutes": 5,
+      "suggested_priority": "high",
+      "source": "PawPal+ Care Guide: Medication Routines"
+    },
+    {
+      "id": "other-grooming-1",
+      "species": "other",
+      "category": "grooming",
+      "text": "Grooming needs vary widely across small and exotic pets; a general check and clean session of 10 to 15 minutes is a reasonable planning default.",
+      "suggested_duration_minutes": 15,
+      "suggested_priority": "low",
+      "source": "PawPal+ Care Guide: Grooming Basics"
+    },
+    {
+      "id": "other-enrichment-1",
+      "species": "other",
+      "category": "enrichment",
+      "text": "Novel objects, foraging opportunities, or supervised exploration time of 15 to 20 minutes supports mental stimulation for small and exotic pets.",
+      "suggested_duration_minutes": 20,
+      "suggested_priority": "low",
+      "source": "PawPal+ Care Guide: Enrichment Basics"
+    },
+    {
+      "id": "any-meds-consistency",
+      "species": "any",
+      "category": "meds",
+      "text": "Recurring medication tasks are generally scheduled at the same time each day; a consistent routine reduces the chance of a missed or doubled dose.",
+      "suggested_duration_minutes": 5,
+      "suggested_priority": "high",
+      "source": "PawPal+ Care Guide: Medication Routines"
+    }
+  ]
+}

@@ -35,6 +35,7 @@ class Task:
     frequency: str = "daily"           # "daily" | "weekly"
     completed: bool = False
     due_date: Optional[_date] = None   # date this instance is scheduled for
+    ai_citation: Optional[str] = None  # set when duration/priority came from the RAG advisor
 
     def mark_complete(self) -> Optional["Task"]:
         """Mark this task as done. If recurring, return a fresh instance for the next occurrence."""
@@ -319,4 +320,6 @@ class Scheduler:
         else:
             parts.append("flexible — fit into available time")
         parts.append(f"category: {task.category}")
+        if task.ai_citation:
+            parts.append(f"AI suggestion source: {task.ai_citation}")
         return ", ".join(parts)

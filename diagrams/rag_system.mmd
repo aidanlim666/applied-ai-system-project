@@ -1,0 +1,68 @@
+%% PawPal+ RAG Extension — System Architecture
+%% Feature: retrieval-augmented suggestions for task duration/priority,
+%% with cited reasoning surfaced in DailySchedule.explain()
+
+flowchart TD
+    subgraph INPUT["Input Layer"]
+        A1["Owner adds/edits a Task<br/>(species, category, title, duration, priority)"]
+    end
+
+    subgraph RETRIEVAL["Retrieval"]
+        KB[("Curated pet-care knowledge base<br/>(breed exercise norms, med spacing,<br/>grooming frequency guidelines)")]
+        R["Retriever<br/>embeds query, returns top-k snippets"]
+        KB --> R
+    end
+
+    subgraph GENERATION["Suggestion Generation"]
+        G["Suggestion Generator (LLM)<br/>proposes duration/priority default<br/>+ cites the source snippet"]
+    end
+
+    subgraph GUARDRAIL["Guardrail / Validator"]
+        V{"Citation present AND<br/>confidence ≥ threshold?"}
+        FB["Fallback: existing rule-based<br/>Task defaults (no AI claim shown)"]
+    end
+
+    subgraph HUMAN["Human-in-the-loop (Streamlit UI)"]
+        DISC["Disclaimer shown:<br/>'Not veterinary advice'"]
+        H{"Owner reviews suggestion"}
+        ACC["Accept AI suggestion"]
+        EDIT["Edit / override values"]
+    end
+
+    subgraph CORE["Existing Core Logic (unchanged)"]
+        T["Task object<br/>(final duration / priority / category)"]
+        S["Scheduler.schedule_day()"]
+        D["DailySchedule<br/>.explain() now includes citation"]
+    end
+
+    subgraph OUTPUT["Output"]
+        O["Streamlit UI:<br/>Plan + Reasoning + Sources"]
+    end
+
+    subgraph EVAL["Offline Reliability Testing (runs in CI / on demand)"]
+        TQ["Fixed test-query set<br/>(species x category combinations)"]
+        EV["Automated Evaluator<br/>checks: citation present,<br/>snippet relevance, no hallucination"]
+        REPORT["Eval report<br/>(pass/fail per query, logged)"]
+        CURATOR["Human curator reviews failures,<br/>updates knowledge base"]
+    end
+
+    A1 --> R
+    R --> G
+    G --> V
+    V -- "Yes" --> DISC
+    V -- "No" --> FB
+    FB --> DISC
+    DISC --> H
+    H --> ACC
+    H --> EDIT
+    ACC --> T
+    EDIT --> T
+    T --> S
+    S --> D
+    D --> O
+
+    TQ --> R
+    G -.-> EV
+    EV --> REPORT
+    REPORT --> CURATOR
+    CURATOR -.-> KB
